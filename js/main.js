@@ -93,6 +93,69 @@ function customeSelectInit() {
 customeSelectInit();
 
 
+let slideUp = (target, duration=500) => {
+  
+  target.style.transitionProperty = 'height, margin, padding';
+  target.style.transitionDuration = duration + 'ms';
+  target.style.boxSizing = 'border-box';
+  target.style.height = target.offsetHeight + 'px';
+  target.offsetHeight;
+  target.style.overflow = 'hidden';
+  target.style.height = 0;
+  target.style.paddingTop = 0;
+  target.style.paddingBottom = 0;
+  target.style.marginTop = 0;
+  target.style.marginBottom = 0;
+  window.setTimeout( () => {
+    target.classList.remove('_active');
+    target.style.display = 'none';
+    target.style.removeProperty('height');
+    target.style.removeProperty('padding-top');
+    target.style.removeProperty('padding-bottom');
+    target.style.removeProperty('margin-top');
+    target.style.removeProperty('margin-bottom');
+    target.style.removeProperty('overflow');
+    target.style.removeProperty('transition-duration');
+    target.style.removeProperty('transition-property');
+    dropDownCheck=true;
+  }, duration);
+}
+
+let slideDown = (target, duration=500) => {
+  target.style.removeProperty('display');
+  let display = window.getComputedStyle(target).display;
+
+  if (display === 'none')
+    display = 'block';
+
+  target.style.display = display;
+  let height = target.offsetHeight;
+  target.style.overflow = 'hidden';
+  target.style.height = 0;
+  target.style.paddingTop = 0;
+  target.style.paddingBottom = 0;
+  target.style.marginTop = 0;
+  target.style.marginBottom = 0;
+  target.offsetHeight;
+  target.style.boxSizing = 'border-box';
+  target.style.transitionProperty = "height, margin, padding";
+  target.style.transitionDuration = duration + 'ms';
+  target.style.height = height + 'px';
+  target.style.removeProperty('padding-top');
+  target.style.removeProperty('padding-bottom');
+  target.style.removeProperty('margin-top');
+  target.style.removeProperty('margin-bottom');
+  window.setTimeout( () => {
+    target.style.removeProperty('height');
+    target.style.removeProperty('overflow');
+    target.style.removeProperty('transition-duration');
+    target.style.removeProperty('transition-property');
+    dropDownCheck=true;
+    target.classList.add('_active');
+  }, duration);
+}
+
+
 const body = document.querySelector('body'),
   html = document.querySelector('html'),
   menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -101,7 +164,7 @@ const body = document.querySelector('body'),
 
 
 
-let thisTarget;
+let thisTarget, dropDownCheck = true;
 body.addEventListener('click', function (event) {
 
   thisTarget = event.target;
@@ -307,6 +370,28 @@ body.addEventListener('click', function (event) {
       setTimeout(() => {
         message.remove();
       }, 1000);
+    }
+
+  }
+
+
+
+  let dropDownToggle = thisTarget.closest('._drop-down-toggle');
+  if (dropDownToggle) {
+
+    let dropDownBody      = dropDownToggle.closest('._drop-down-body'),
+        dropDownContent   = (dropDownBody) ? dropDownBody.querySelector('._drop-down-content') : false;
+
+    if (dropDownContent) {
+      if(dropDownContent.classList.contains('_active') && dropDownCheck) {
+        dropDownCheck = false;
+        //dropDownContent.classList.remove('_active');
+        slideUp(dropDownContent);
+      } else if(!dropDownContent.classList.contains('_active') && dropDownCheck) {
+        dropDownCheck = false;
+        //dropDownContent.classList.add('_active');
+        slideDown(dropDownContent);
+      }
     }
 
   }
