@@ -208,5 +208,5 @@ window.addEventListener('load', async () => {
   document.querySelectorAll(".btn-disconnect").forEach(element => {
     element.addEventListener("click", onDisconnect);
   })
-  document.querySelector("#btn-pay").addEventListener("click", onPay);
+  if(document.querySelector("#btn-pay")) document.querySelector("#btn-pay").addEventListener("click", onPay);
 });
