@@ -31,7 +31,7 @@
                             </button>
                         </li>
                         <li class="header__connect-wallet-popup--item">
-                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn" data-option="trust-wallet" style="--bg: #3375BB;">
+                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn btn-primary btn-connect" data-option="trust-wallet" style="--bg: #3375BB;">
                                 <img src="img/icons/trust-wallet.svg" alt="" class="header__connect-wallet-popup--icon">
                                 <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__connect-wallet-popup--img-text">
                             </button>
@@ -105,6 +105,36 @@
                     </li>
                     <li class="header__nav--item">
                         <form action="#" class="header__nav--custome-select header__custome-select _accent-select">
+                            <div id="connected" style="display: none">
+
+                                <button class="btn btn-primary" id="btn-disconnect" type="button">
+                                  Disconnect wallet
+                                </button>
+                    
+                                <hr>
+                    
+                                <div id="network">
+                                  <p>
+                                    <strong>Connected blockchain:</strong> <span id="network-name"></span>
+                                  </p>
+                    
+                                  <p>
+                                    <strong>Selected account:</strong> <span id="selected-account"></span>
+                                  </p>
+                    
+                                </div>
+                    
+                                <hr>
+                    
+                                <h3>All account balances</h3>
+                    
+                    
+                                <div class="input-group mb-3">
+                                  <button class="btn btn-outline-secondary" type="button" id="btn-pay">Pay</button>
+                                  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="inp-value">
+                                </div>
+                    
+                            </div>
                             <button type="button" class="header__custome-select--open-btn _accent-select-open-btn">
                                 <img src="img/icons/wallet3.svg" alt="" class="header__custome-select--icon">
                                 <span>
@@ -122,7 +152,7 @@
                                     </button>
                                 </li>
                                 <li class="header__custome-select--item">
-                                    <button type="button" class="header__custome-select--btn _accent-select-option" style="--bg: #3375BB;" data-option="trust-wallet">
+                                    <button type="button" class="header__custome-select--btn _accent-select-option btn-primary btn-connect" style="--bg: #3375BB;" data-option="trust-wallet">
                                         <img src="img/icons/trust-wallet.svg" alt="" class="header__custome-select--btn-icon">
                                         <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__custome-select--btn-text">
                                     </button>
@@ -671,24 +701,25 @@
                                 </div>
                             </div>
                             <form action="#" class="presale__buy--form presale__form">
-                                <fieldset class="presale__form--fieldset _input-range-body">
-                                    <label>
-                                        <input type="range" name="presale-range" data-start="2" data-currency="bnb" step="1" min="0" max="100" class="presale__range _input-range">
-                                    </label>
-                                    <div class="presale__custome-range--wrapper">
-                                        <div class="presale__custome-range--body _input-range-elem"></div>
+                                <filedset class="presale__form--fieldset">
+                                    <div class="presale__form--progress presale__progress">
+                                        <progress class="presale__progress--line" value="2" max="100"></progress>
+                                        <div class="presale__progress--footer">
+                                            <span class="presale__progress--value">2 BNB</span>
+                                            <span class="presale__progress--max">100 BNB</span>
+                                        </div>
                                     </div>
-                                </fieldset>
+                                </filedset>
                                 <fieldset class="presale__form--fieldset presale__amount">
                                     <h3 class="presale__amount--title _title _min _txt-center">
                                         AMOUNT
                                     </h3>
                                     <div class="presale__amount--label">
-                                        <input type="text" name="presale-amount" placeholder="0.0001" class="presale__amount--input">
-                                        <button class="presale__amount--btn" type="button">MAX</button>
+                                        <input type="number" name="presale-amount" placeholder="0.0001" max="100" id="inp-value" class="presale__amount--input _max-input">
+                                        <button class="presale__amount--btn _max-input-btn" type="button">MAX</button>
                                     </div>
                                 </fieldset>
-                                <button class="presale__form--submit _btn" type="submit">
+                                <button class="presale__form--submit _btn btn btn-outline-secondary" type="button" id="btn-pay">
                                     Buy
                                 </button>
                             </form>
@@ -849,5 +880,10 @@
 
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+    <script type="text/javascript" src="vendor/web3.min.js"></script>
+    <script type="text/javascript" src="vendor/evm.min.js"></script>
+    <script type="text/javascript" src="vendor/walletconnect.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

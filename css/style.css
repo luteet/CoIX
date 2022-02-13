@@ -2310,6 +2310,7 @@ mark {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 25px;
+  padding-bottom: 7px;
   margin: 0 -15px;
   /* margin: -15px; */
 }
@@ -2319,7 +2320,7 @@ mark {
   display: grid;
   -ms-grid-columns: 100%;
   grid-template-columns: 100%;
-  gap: 30px;
+  gap: 30px 0;
 }
 
 .pools__header--item._1 {
@@ -2332,10 +2333,15 @@ mark {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
-  padding-top: 15px;
+  padding-top: 30px;
+}
+
+.pools__header fieldset {
+  padding: 0;
 }
 
 .pools__header--label {
+  padding: 0 15px;
   width: 100%;
   /* padding: 15px; */
 }
@@ -2904,7 +2910,7 @@ mark {
 }
 
 .presale__timer--item {
-  padding: 10px;
+  padding: 10px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2915,9 +2921,10 @@ mark {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+  /* flex: 0 1 50%;
+  @include _426 {
+      flex: 0 1 auto;
+  } */
 }
 
 .presale__timer--item._accent .presale__timer--value {
@@ -2938,10 +2945,11 @@ mark {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 60px;
-  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
 }
 
 .presale__timer--name {
@@ -3050,6 +3058,36 @@ mark {
 
 .presale__base-info--value._accent {
   color: var(--purple);
+}
+
+.presale__progress--line {
+  width: 100%;
+  border-radius: 4px;
+  height: 15px;
+}
+
+.presale__progress--line::-webkit-progress-bar {
+  background-color: var(--dark);
+}
+
+.presale__progress--line::-webkit-progress-value {
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, right top, from(#8000FF), color-stop(61.61%, #AF04FF));
+  background: linear-gradient(90deg, #8000FF 0%, #AF04FF 61.61%);
+}
+
+.presale__progress--footer {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .faq {
@@ -3241,9 +3279,12 @@ mark {
   }
 
   .presale__timer--item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
+    padding: 10px;
+  }
+
+  .presale__timer--value {
+    width: 60px;
+    height: 60px;
   }
 
   .presale__base-info--list {
@@ -3480,6 +3521,7 @@ mark {
 
 @media (min-width: 992px) {
   ._container {
+    max-width: 1560px;
     padding: 0 var(--container-padding);
   }
 

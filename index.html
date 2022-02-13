@@ -31,7 +31,7 @@
                             </button>
                         </li>
                         <li class="header__connect-wallet-popup--item">
-                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn" data-option="trust-wallet" style="--bg: #3375BB;">
+                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn btn-primary btn-connect" data-option="trust-wallet" style="--bg: #3375BB;">
                                 <img src="img/icons/trust-wallet.svg" alt="" class="header__connect-wallet-popup--icon">
                                 <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__connect-wallet-popup--img-text">
                             </button>
@@ -105,6 +105,36 @@
                     </li>
                     <li class="header__nav--item">
                         <form action="#" class="header__nav--custome-select header__custome-select _accent-select">
+                            <div id="connected" style="display: none">
+
+                                <button class="btn btn-primary" id="btn-disconnect" type="button">
+                                  Disconnect wallet
+                                </button>
+                    
+                                <hr>
+                    
+                                <div id="network">
+                                  <p>
+                                    <strong>Connected blockchain:</strong> <span id="network-name"></span>
+                                  </p>
+                    
+                                  <p>
+                                    <strong>Selected account:</strong> <span id="selected-account"></span>
+                                  </p>
+                    
+                                </div>
+                    
+                                <hr>
+                    
+                                <h3>All account balances</h3>
+                    
+                    
+                                <div class="input-group mb-3">
+                                  <button class="btn btn-outline-secondary" type="button" id="btn-pay">Pay</button>
+                                  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="inp-value">
+                                </div>
+                    
+                            </div>
                             <button type="button" class="header__custome-select--open-btn _accent-select-open-btn">
                                 <img src="img/icons/wallet3.svg" alt="" class="header__custome-select--icon">
                                 <span>
@@ -122,7 +152,7 @@
                                     </button>
                                 </li>
                                 <li class="header__custome-select--item">
-                                    <button type="button" class="header__custome-select--btn _accent-select-option" style="--bg: #3375BB;" data-option="trust-wallet">
+                                    <button type="button" class="header__custome-select--btn _accent-select-option btn-primary btn-connect" style="--bg: #3375BB;" data-option="trust-wallet">
                                         <img src="img/icons/trust-wallet.svg" alt="" class="header__custome-select--btn-icon">
                                         <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__custome-select--btn-text">
                                     </button>
@@ -641,7 +671,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -741,7 +771,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -841,7 +871,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -941,7 +971,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -1041,7 +1071,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -1141,7 +1171,7 @@
             </div>
         </div>
         <div class="pools__item--footer">
-            <a href="#" class="pools__item--btn _btn">
+            <a href="presale.html" class="pools__item--btn _btn">
                 PARTICIPATE IN POOL
             </a>
             <a href="#" class="pools__item--btn _btn _alt">
@@ -1282,5 +1312,10 @@
 
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+    <script type="text/javascript" src="vendor/web3.min.js"></script>
+    <script type="text/javascript" src="vendor/evm.min.js"></script>
+    <script type="text/javascript" src="vendor/walletconnect.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

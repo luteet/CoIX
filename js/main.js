@@ -199,9 +199,10 @@ body.addEventListener('click', function (event) {
   if (accentSelectOpenBtn) {
     event.preventDefault();
 
-    customeAccentSelectRemove();
-
-    let accentSelect = accentSelectOpenBtn.closest('._accent-select'),
+    if(accentSelectOpenBtn.classList.contains('_active')) {
+      customeAccentSelectRemove();
+    } else {
+      let accentSelect = accentSelectOpenBtn.closest('._accent-select'),
       accentSelectList = (accentSelect) ? accentSelect.querySelector('._accent-select-list') : false;
 
     if (accentSelectList) {
@@ -215,6 +216,9 @@ body.addEventListener('click', function (event) {
       }
 
     }
+    }
+
+    
 
   } else if (thisTarget.closest('._accent-select-option')) {
 
@@ -222,13 +226,7 @@ body.addEventListener('click', function (event) {
       accentSelect = accentSelectOption.closest('._accent-select'),
       accentSelectElem = (accentSelect) ? accentSelect.querySelector('._accent-select-elem') : false;
 
-    customeAccentSelectRemove();
-
     if (accentSelectElem) accentSelectElem.value = accentSelectOption.dataset.option;
-
-  } else if (!thisTarget.closest('._accent-select')) {
-
-    customeAccentSelectRemove();
 
   }
 
@@ -385,51 +383,26 @@ body.addEventListener('click', function (event) {
     if (dropDownContent) {
       if(dropDownContent.classList.contains('_active') && dropDownCheck) {
         dropDownCheck = false;
-        //dropDownContent.classList.remove('_active');
         slideUp(dropDownContent);
       } else if(!dropDownContent.classList.contains('_active') && dropDownCheck) {
         dropDownCheck = false;
-        //dropDownContent.classList.add('_active');
         slideDown(dropDownContent);
       }
     }
 
   }
 
+
+
+  let maxInputBtn = thisTarget.closest('._max-input-btn');
+  if(maxInputBtn) {
+    let input = maxInputBtn.parentNode.querySelector('._max-input');
+    if(input) input.value = input.getAttribute('max');
+  }
+
 })
 
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
-/*
-let slider = new Swiper('.__slider', {
-
-    spaceBetween: 30,
-    slidesPerView: 1,
-    centeredSlides: false,
-
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      992: {
-        slidesPerView: 3,
-        centeredSlides: true,
-
-      },
-      600: {
-        slidesPerView: 2,
-        centeredSlides: false,
-      },
-    }
-});
-*/
-// =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 function timer() {
@@ -529,146 +502,3 @@ buyTimer();
 
 
 
-
-
-
-function customeRange() {
-  const range = document.querySelectorAll('._input-range');
-
-  if (range[0]) {
-    range.forEach(thisRange => {
-
-      let rangeBody = thisRange.closest('._input-range-body'),
-          rangeElem = rangeBody.querySelector('._input-range-elem');
-
-      let start     = Number(thisRange.dataset.start),
-          step      = Number(thisRange.getAttribute('step')),
-          min       = Number(thisRange.getAttribute('min')),
-          max       = Number(thisRange.getAttribute('max')),
-          currency  = thisRange.dataset.currency;
-
-
-      try {
-
-        const rangeSlider = noUiSlider.create(rangeElem, {
-          tooltips: true,
-
-          start: [start],
-          connect: 'lower',
-
-          step: step,
-          range: {
-            'min': min,
-            'max': max,
-          },
-
-          format: {
-            to: function (value) {
-              let valueString = Math.round(value).toString(),
-                rangeMin = document.querySelector('.range-value-min');
-
-                thisRange.setAttribute('value', valueString);
-
-                if(rangeMin) rangeMin.textContent = `${valueString} ${currency}`;
-                return valueString;
-
-              /* if (valueString.length == 4) {
-                valueResult = valueString.slice(0, 1) + " " + valueString.slice(1);
-              } else if (valueString.length == 5) {
-                valueResult = valueString.slice(0, 2) + " " + valueString.slice(2);
-              } else if (valueString.length == 6) {
-                valueResult = valueString.slice(0, 3) + " " + valueString.slice(3);
-              }
-              return (valueResult) ? valueResult : valueString; */
-
-            },
-            from: function (value) {
-              rangeElem.insertAdjacentHTML('beforeend',
-
-                `<span class="range-value range-value-min">${Number(thisRange.value)} ${currency}</span>
-                 <span class="range-value range-value-max">${Number(thisRange.getAttribute('max'))} ${currency}</span>`)
-
-              return Math.round(value);
-            }
-          }
-
-        });
-
-        thisRange.classList.add('_custome-slider-active');
-
-      } catch { }
-
-
-    })
-  }
-
-}
-
-customeRange();
-/* 
-const range = document.querySelector('.filter__price--range'),
-  filterRangeBody = document.querySelector('.filter__price--range-body'),
-  filterPriceMin = document.querySelector('.filter__price--value._min-value'),
-  filterPriceMax = document.querySelector('.filter__price--value._max-value'),
-  filterRangeValue = document.querySelector('.filter__price--range-value');
-try {
-
-  const filterRangeSlider = noUiSlider.create(filterRangeBody, {
-    tooltips: true,
-
-    start: [Number(filterRange.getAttribute('data-start'))],
-    connect: 'lower',
-
-    step: Number(filterRange.getAttribute('step')),
-    range: {
-      'min': Number(filterRange.getAttribute('min')),
-      'max': Number(filterRange.getAttribute('max')),
-    },
-
-    format: {
-      to: function (value) {
-        let valueString = Math.round(value).toString(),
-          valueResult = '';
-
-        filterRange.setAttribute('value', valueString);
-
-        if (valueString.length == 4) {
-          valueResult = valueString.slice(0, 1) + " " + valueString.slice(1);
-        } else if (valueString.length == 5) {
-          valueResult = valueString.slice(0, 2) + " " + valueString.slice(2);
-        } else if (valueString.length == 6) {
-          valueResult = valueString.slice(0, 3) + " " + valueString.slice(3);
-        }
-        return (valueResult) ? valueResult : valueString;
-
-      },
-      from: function (value) {
-        filterRangeBody.insertAdjacentHTML('beforeend',
-
-          `<span class="range-value range-value-min">${Number(filterRange.getAttribute('min'))}</span>
-          <span class="range-value range-value-max">${Number(filterRange.getAttribute('max'))}</span>`)
-
-        return Math.round(value);
-      }
-    }
-
-  });
-
-  filterRange.classList.add('_custome-slider-active');
-
-} catch { }
-
-// } */
-
-
-/* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-
-wow = new WOW({
-mobile:       false,
-})
-wow.init();
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-
-*/
