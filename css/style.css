@@ -2869,6 +2869,7 @@ mark {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: right;
+  padding-left: 10px;
 }
 
 .presale__info-item--value._accent {
