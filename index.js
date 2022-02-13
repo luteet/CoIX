@@ -64,7 +64,7 @@ async function fetchAccountData() {
   const chainId = await web3.eth.getChainId();
   // Load chain information over an HTTP API
   const chainData = evmChains.getChain(chainId);
-  document.querySelector("#network-name").textContent = chainData.name;
+  //document.querySelector("#network-name").textContent = chainData.name;
 
   // Get list of accounts of the connected wallet
   const accounts = await web3.eth.getAccounts();
@@ -73,12 +73,12 @@ async function fetchAccountData() {
   console.log("Got accounts", accounts);
   selectedAccount = accounts[0];
 
-  document.querySelector("#selected-account").textContent = selectedAccount;
+  //document.querySelector("#selected-account").textContent = selectedAccount;
 
 
   // Display fully loaded UI for wallet data
-  document.querySelector("#prepare").style.display = "none";
-  document.querySelector("#connected").style.display = "block";
+  //document.querySelector("#prepare").style.display = "none";
+  //document.querySelector("#connected").style.display = "block";
 }
 
 
@@ -91,8 +91,8 @@ async function fetchAccountData() {
  */
 async function refreshAccountData() {
 
-  document.querySelector("#connected").style.display = "none";
-  document.querySelector("#prepare").style.display = "block";
+  //document.querySelector("#connected").style.display = "none";
+  //document.querySelector("#prepare").style.display = "block";
 
 
   document.querySelectorAll(".btn-connect").forEach(element => {
@@ -115,6 +115,12 @@ async function onConnect() {
     provider = await web3Modal.connect();
     document.querySelectorAll(".connected-message").forEach(element => {
       element.textContent = element.dataset.connected;
+    })
+    document.querySelectorAll(".btn-disconnect").forEach(element => {
+      element.style.display = 'block';
+    })
+    document.querySelector(".btn-connect").forEach(element => {
+      element.style.display = 'none';
     })
   } catch(e) {
     console.log("Could not get a wallet connection", e);
@@ -161,10 +167,13 @@ async function onDisconnect() {
   selectedAccount = null;
 
   // Set the UI back to the initial state
-  document.querySelector("#prepare").style.display = "block";
-  document.querySelector("#connected").style.display = "none";
+  //document.querySelector("#prepare").style.display = "block";
+  //document.querySelector("#connected").style.display = "none";
   document.querySelectorAll(".connected-message").forEach(element => {
     element.textContent = element.dataset.disconnected;
+  })
+  document.querySelectorAll(".btn-disconnect").forEach(element => {
+    element.style.display = 'none';
   })
 }
 
@@ -196,6 +205,8 @@ window.addEventListener('load', async () => {
   document.querySelectorAll(".btn-connect").forEach(element => {
     element.addEventListener("click", onConnect);
   })
-  document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
+  document.querySelectorAll(".btn-disconnect").forEach(element => {
+    element.addEventListener("click", onDisconnect);
+  })
   document.querySelector("#btn-pay").addEventListener("click", onPay);
 });

@@ -1561,6 +1561,13 @@ body._popup-active {
   font-size: 0;
 }
 
+.btn-disconnect {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
 ._input-range-elem {
   border: 0;
   -webkit-box-shadow: none;
