@@ -67,21 +67,21 @@ function customeSelectRemove() {
 function customeSelectInit() {
   let customeSelect = document.querySelectorAll('._custome-select');
 
-  if(customeSelect[0]) {
+  if (customeSelect[0]) {
     customeSelect.forEach(element => {
       let selectedOption = element.querySelector('._custome-select-original');
 
-      if(selectedOption) {
+      if (selectedOption) {
         selectedOption = selectedOption.querySelector('option[selected]');
-        if(selectedOption) {
-          let customeSelectOption     = element.querySelector(`[data-option="${selectedOption.value}"]`),
-              customeSelectSelected   = element.querySelector('._custome-select-selected');
+        if (selectedOption) {
+          let customeSelectOption = element.querySelector(`[data-option="${selectedOption.value}"]`),
+            customeSelectSelected = element.querySelector('._custome-select-selected');
 
-          if(customeSelectOption) {
+          if (customeSelectOption) {
             customeSelectOption.classList.add('_selected');
-            if(customeSelectSelected) customeSelectSelected.textContent = customeSelectOption.textContent
-          } 
-          
+            if (customeSelectSelected) customeSelectSelected.textContent = customeSelectOption.textContent
+          }
+
 
         }
       }
@@ -175,12 +175,12 @@ body.addEventListener('click', function (event) {
   if (customeSelectSelected) {
     event.preventDefault();
 
-    if(!customeSelectSelected.classList.contains('_active')) {
+    if (!customeSelectSelected.classList.contains('_active')) {
       customeSelectRemove();
     }
-    
+
     let customeSelect = customeSelectSelected.closest('._custome-select'),
-        customeSelectList = (customeSelect) ? customeSelect.querySelector('._custome-select-list') : false;
+      customeSelectList = (customeSelect) ? customeSelect.querySelector('._custome-select-list') : false;
 
     if (customeSelectList) {
 
@@ -190,7 +190,7 @@ body.addEventListener('click', function (event) {
         customeSelectSelected.classList.add('_active');
 
       } else {
-        
+
         customeSelectList.classList.remove('_active');
         customeSelectSelected.classList.remove('_active');
 
@@ -201,11 +201,11 @@ body.addEventListener('click', function (event) {
   } else if (thisTarget.closest('._custome-select-option')) {
 
     let customeSelectOption = thisTarget.closest('._custome-select-option'),
-        customeSelect = customeSelectOption.closest('._custome-select'),
-        customeSelectSelected = (customeSelect) ? customeSelect.querySelector('._custome-select-selected') : false,
-        customeSelectOriginal = (customeSelect) ? customeSelect.querySelector('._custome-select-original') : false;
+      customeSelect = customeSelectOption.closest('._custome-select'),
+      customeSelectSelected = (customeSelect) ? customeSelect.querySelector('._custome-select-selected') : false,
+      customeSelectOriginal = (customeSelect) ? customeSelect.querySelector('._custome-select-original') : false;
 
-    if(customeSelect) {
+    if (customeSelect) {
       customeSelect.querySelectorAll('._custome-select-option').forEach(element => {
         element.classList.remove('_selected');
       })
@@ -223,7 +223,7 @@ body.addEventListener('click', function (event) {
     customeSelectRemove();
 
   }
-  
+
 
 
   let closePopup = thisTarget.closest('._close-header-popup');
@@ -271,7 +271,7 @@ body.addEventListener('click', function (event) {
   if (connectWalletBtn) {
 
     let connectWalletBody = connectWalletBtn.closest('._connect-wallet-body'),
-        connectWalletSelect = (connectWalletBody) ? connectWalletBody.querySelector('._connect-wallet-select') : false;
+      connectWalletSelect = (connectWalletBody) ? connectWalletBody.querySelector('._connect-wallet-select') : false;
 
     if (connectWalletSelect) {
       connectWalletSelect.value = connectWalletBtn.dataset.option;
@@ -298,15 +298,15 @@ body.addEventListener('click', function (event) {
 
 
   let messageClose = thisTarget.closest('._min-message-close');
-  if(messageClose) {
+  if (messageClose) {
 
     let message = messageClose.closest('._min-message');
-    
-    if(message) {
+
+    if (message) {
       message.classList.add('_removing');
       setTimeout(() => {
         message.remove();
-      },1000);
+      }, 1000);
     }
 
   }
@@ -350,31 +350,31 @@ let slider = new Swiper('.__slider', {
 function timer() {
 
   const timerElems = document.querySelectorAll('._timer');
-  
+
   let deadline;
-  
+
   timerElems.forEach(timerElem => {
 
-      deadline = new Date(
+    deadline = new Date(
 
-          timerElem.getAttribute('data-timer-year'),
-          timerElem.getAttribute('data-timer-month') - 1,
-          timerElem.getAttribute('data-timer-day'),
-          timerElem.getAttribute('data-timer-hour'),
-          timerElem.getAttribute('data-timer-minute'));
+      timerElem.getAttribute('data-timer-year'),
+      timerElem.getAttribute('data-timer-month') - 1,
+      timerElem.getAttribute('data-timer-day'),
+      timerElem.getAttribute('data-timer-hour'),
+      timerElem.getAttribute('data-timer-minute'));
 
-          setInterval(() => {
-  
-            const diff = deadline - new Date(),
-            
-                days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
-                hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
-                seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0,
-                minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-    
-          timerElem.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    setInterval(() => {
 
-          },1000);
+      const diff = deadline - new Date(),
+
+        days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
+        hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
+        seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0,
+        minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+
+      timerElem.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    }, 1000);
 
   });
 
@@ -382,6 +382,198 @@ function timer() {
 
 timer();
 
+
+function buyTimer() {
+
+  const timerElems = document.querySelectorAll('._timer-buy');
+
+  let deadline;
+
+  timerElems.forEach(timerElem => {
+
+    deadline = new Date(
+
+      timerElem.getAttribute('data-timer-year'),
+      timerElem.getAttribute('data-timer-month') - 1,
+      timerElem.getAttribute('data-timer-day'),
+      timerElem.getAttribute('data-timer-hour'),
+      timerElem.getAttribute('data-timer-minute'));
+
+    let timerDay = timerElem.querySelector('._timer-buy-day'),
+      timerHour = timerElem.querySelector('._timer-buy-hour'),
+      timerMin = timerElem.querySelector('._timer-buy-min'),
+      timerSec = timerElem.querySelector('._timer-buy-sec');
+
+
+    setInterval(() => {
+
+      const diff = deadline - new Date(),
+
+        days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
+        hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
+        seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0,
+        minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+
+      if (timerDay) {
+        let value = timerDay.querySelector('._timer-buy-value');
+        if (value) value.textContent = (days > 9) ? days : '0' + days;
+      }
+
+      if (timerHour) {
+        let value = timerHour.querySelector('._timer-buy-value');
+        if (value) value.textContent = (hours > 9) ? hours : '0' + hours;
+      }
+
+      if (timerMin) {
+        let value = timerMin.querySelector('._timer-buy-value');
+        if (value) value.textContent = (minutes > 9) ? minutes : '0' + minutes;
+      }
+
+      if (timerSec) {
+        let value = timerSec.querySelector('._timer-buy-value');
+        if (value) value.textContent = (seconds > 9) ? seconds : '0' + seconds;
+      }
+
+    }, 1000);
+
+  });
+
+}
+
+buyTimer();
+
+
+
+
+
+
+function customeRange() {
+  const range = document.querySelectorAll('._input-range');
+
+  if (range[0]) {
+    range.forEach(thisRange => {
+
+      let rangeBody = thisRange.closest('._input-range-body'),
+          rangeElem = rangeBody.querySelector('._input-range-elem');
+
+      let start     = Number(thisRange.dataset.start),
+          step      = Number(thisRange.getAttribute('step')),
+          min       = Number(thisRange.getAttribute('min')),
+          max       = Number(thisRange.getAttribute('max')),
+          currency  = thisRange.dataset.currency;
+
+
+      try {
+
+        const rangeSlider = noUiSlider.create(rangeElem, {
+          tooltips: true,
+
+          start: [start],
+          connect: 'lower',
+
+          step: step,
+          range: {
+            'min': min,
+            'max': max,
+          },
+
+          format: {
+            to: function (value) {
+              let valueString = Math.round(value).toString(),
+                rangeMin = document.querySelector('.range-value-min');
+
+                thisRange.setAttribute('value', valueString);
+
+                if(rangeMin) rangeMin.textContent = `${valueString} ${currency}`;
+                return valueString;
+
+              /* if (valueString.length == 4) {
+                valueResult = valueString.slice(0, 1) + " " + valueString.slice(1);
+              } else if (valueString.length == 5) {
+                valueResult = valueString.slice(0, 2) + " " + valueString.slice(2);
+              } else if (valueString.length == 6) {
+                valueResult = valueString.slice(0, 3) + " " + valueString.slice(3);
+              }
+              return (valueResult) ? valueResult : valueString; */
+
+            },
+            from: function (value) {
+              rangeElem.insertAdjacentHTML('beforeend',
+
+                `<span class="range-value range-value-min">${Number(thisRange.value)} ${currency}</span>
+                 <span class="range-value range-value-max">${Number(thisRange.getAttribute('max'))} ${currency}</span>`)
+
+              return Math.round(value);
+            }
+          }
+
+        });
+
+        thisRange.classList.add('_custome-slider-active');
+
+      } catch { }
+
+
+    })
+  }
+
+}
+
+customeRange();
+/* 
+const range = document.querySelector('.filter__price--range'),
+  filterRangeBody = document.querySelector('.filter__price--range-body'),
+  filterPriceMin = document.querySelector('.filter__price--value._min-value'),
+  filterPriceMax = document.querySelector('.filter__price--value._max-value'),
+  filterRangeValue = document.querySelector('.filter__price--range-value');
+try {
+
+  const filterRangeSlider = noUiSlider.create(filterRangeBody, {
+    tooltips: true,
+
+    start: [Number(filterRange.getAttribute('data-start'))],
+    connect: 'lower',
+
+    step: Number(filterRange.getAttribute('step')),
+    range: {
+      'min': Number(filterRange.getAttribute('min')),
+      'max': Number(filterRange.getAttribute('max')),
+    },
+
+    format: {
+      to: function (value) {
+        let valueString = Math.round(value).toString(),
+          valueResult = '';
+
+        filterRange.setAttribute('value', valueString);
+
+        if (valueString.length == 4) {
+          valueResult = valueString.slice(0, 1) + " " + valueString.slice(1);
+        } else if (valueString.length == 5) {
+          valueResult = valueString.slice(0, 2) + " " + valueString.slice(2);
+        } else if (valueString.length == 6) {
+          valueResult = valueString.slice(0, 3) + " " + valueString.slice(3);
+        }
+        return (valueResult) ? valueResult : valueString;
+
+      },
+      from: function (value) {
+        filterRangeBody.insertAdjacentHTML('beforeend',
+
+          `<span class="range-value range-value-min">${Number(filterRange.getAttribute('min'))}</span>
+          <span class="range-value range-value-max">${Number(filterRange.getAttribute('max'))}</span>`)
+
+        return Math.round(value);
+      }
+    }
+
+  });
+
+  filterRange.classList.add('_custome-slider-active');
+
+} catch { }
+
+// } */
 
 
 /* 

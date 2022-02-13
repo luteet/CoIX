@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="SHORTCUT ICON" href="img/logo.svg" type="image/svg"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+    <div class="offset-check-js"></div>
+    <header class="header">
+        <div class="header__container _container">
+            <a href="#" class="header__logo">
+                <img src="img/logo.svg" alt="" width="144" class="header__logo--img">
+            </a>
+            <div id="header-connect-wallet" class="header__connect-wallet-popup _header-popup">
+                <form action="#" class="header__connect-wallet-popup--body _connect-wallet-body">
+                    <div class="header__connect-wallet-popup--info">
+                        <img src="img/icons/wallet3.svg" alt="" class="header__connect-wallet-popup--img">
+                        <h2 class="header__connect-wallet-popup--title">
+                            Connect wallet
+                        </h2>
+                    </div>
+                    <ul class="header__connect-wallet-popup--list">
+                        <li class="header__connect-wallet-popup--item">
+                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn" data-option="metamask" style="--bg: #884407;">
+                                <img src="img/icons/metamask.svg" alt="" class="header__connect-wallet-popup--icon">
+                                <img src="img/icons/metamask-text.svg" width="131" alt="" class="header__connect-wallet-popup--img-text">
+                            </button>
+                        </li>
+                        <li class="header__connect-wallet-popup--item">
+                            <button type="button" class="header__connect-wallet-popup--btn _connect-wallet-btn" data-option="trust-wallet" style="--bg: #3375BB;">
+                                <img src="img/icons/trust-wallet.svg" alt="" class="header__connect-wallet-popup--icon">
+                                <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__connect-wallet-popup--img-text">
+                            </button>
+                        </li>
+                    </ul>
+                    <select name="connect-wallet-popup" id="" class="header__connect-wallet-popup--select _connect-wallet-select">
+                        <option value="metamask">
+                            Metamask
+                        </option>
+                        <option value="trust-wallet">
+                            Trust Wallet
+                        </option>
+                    </select>
+                </form>
+            </div>
+            <nav class="header__nav-panel">
+                <ul class="header__nav-panel--list">
+                    <li class="header__nav-panel--item">
+                        <a href="#" class="header__nav-panel--link _close-header-popup _btn-to-scroll" style="--shadow: drop-shadow(0px 0px 30px #FFBA2B);">
+                            <svg width="30" height="30" viewBox="0 0 30 30">
+                                <path d="M6.16664 1.815L0 10.0371H12.3332L6.16664 1.815Z" fill="#FFBA2B"/>
+                                <path d="M8.6665 0.703911L14.9998 9.14822L21.3332 0.703735L8.6665 0.703911Z" fill="#FFBA2B"/>
+                                <path d="M16.3335 12.7037V29.2963L29.9093 12.7037H16.3335Z" fill="#FFBA2B"/>
+                                <path d="M23.8333 1.815L17.6665 10.0371H29.9998L23.8333 1.815Z" fill="#FFBA2B"/>
+                                <path d="M0.0908203 12.7037L13.6666 29.2963V12.7037H0.0908203Z" fill="#FFBA2B"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-panel--item">
+                        <a href="#" class="header__nav-panel--link _close-header-popup _main-link _active" style="--shadow: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.7));">
+                            <svg width="60" height="59" viewBox="0 0 60 59">
+                                <path d="M37.5601 16.224L30.3001 9.408L23.5201 16.224L18.4561 11.88L30.3001 0L42.0241 11.664L37.5601 16.224Z" fill="white"/>
+                                <path d="M23.5201 16.224L30.3001 0L18.4561 11.88L23.5201 16.224Z" fill="white"/>
+                                <path d="M42.0243 11.664L30.3003 0L37.5603 16.224L42.0243 11.664Z" fill="white"/>
+                                <path d="M23.1241 42.384L30.3961 49.188L37.1761 42.384L41.8201 47.148L30.3961 58.6081L18.6602 46.944L23.1241 42.384Z" fill="white"/>
+                                <path d="M30.3961 58.6081L18.6602 46.944L23.1241 42.384L30.3961 58.6081Z" fill="white"/>
+                                <path d="M41.82 47.148L30.396 58.6081L37.176 42.384L41.82 47.148Z" fill="white"/>
+                                <path d="M50.376 29.52L40.248 39.6361L44.952 44.3521L59.784 29.52L44.952 14.688L40.248 19.392L50.376 29.52Z" fill="white"/>
+                                <path d="M40.248 39.636L59.784 29.52L44.952 44.3521L40.248 39.636Z" fill="white"/>
+                                <path d="M59.784 29.52L40.248 19.392L44.952 14.688L59.784 29.52Z" fill="white"/>
+                                <path d="M9.40801 29.52L19.536 19.392L14.832 14.688L0 29.52L14.832 44.3521L19.536 39.6361L9.40801 29.52Z" fill="white"/>
+                                <path d="M19.536 39.636L0 29.52L14.832 44.3521L19.536 39.636Z" fill="white"/>
+                                <path d="M19.536 19.392L0 29.52L14.832 14.688L19.536 19.392Z" fill="white"/>
+                                <path d="M29.0398 34.248L24.4078 29.604L29.0398 24.972V15.408L14.9878 29.604L29.0398 43.656V34.248Z" fill="white"/>
+                                <path d="M15 29.544L29.052 24.912V15.324L15 29.544Z" fill="white"/>
+                                <path d="M29.052 34.188L15 29.544L29.052 43.596V34.188Z" fill="white"/>
+                                <path d="M31.4399 34.236L36.0719 29.604L31.4399 24.96V15.396L45.4919 29.604L31.4399 43.644V34.236Z" fill="white"/>
+                                <path d="M45.4919 29.604L31.4399 24.96V15.396L45.4919 29.604Z" fill="white"/>
+                                <path d="M31.4761 43.5V34.2L45.5761 29.544L31.4761 43.5Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-panel--item">
+                        <a href="#header-connect-wallet" class="header__nav-panel--link _open-header-popup" style="--shadow: drop-shadow(0px 0px 30px #AF04FF);">
+                            <svg width="30" height="25" viewBox="0 0 30 25">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.124 8.13477H26.6162V7.45361C25.9131 4.83398 24.126 4.85107 21.9165 4.87305C21.5527 4.87793 21.2231 4.88037 21.2036 4.88037H4.41162C4.02588 4.88037 3.71338 4.56787 3.71338 4.18213C3.71338 3.79639 4.02588 3.48389 4.41162 3.48389H21.2036C21.6992 3.48389 21.8042 3.48389 21.9043 3.48145C23.7939 3.46191 25.4443 3.44482 26.6162 4.55078V4.23096C26.6162 3.44971 26.2964 2.7417 25.7813 2.22656C25.2661 1.71143 24.5557 1.3916 23.7769 1.3916H4.2334C3.45215 1.3916 2.74414 1.71143 2.229 2.22656C1.71387 2.7417 1.39404 3.45215 1.39404 4.23096V20.5005C1.39404 21.2817 1.71387 21.9897 2.229 22.5049C2.74414 23.02 3.45459 23.3398 4.2334 23.3398H23.7744C24.5557 23.3398 25.2637 23.02 25.7788 22.5049C26.2939 21.9897 26.6138 21.2793 26.6138 20.5005V18.1909H22.1216C20.7666 18.1909 19.5337 17.6367 18.6426 16.7456C17.7515 15.8545 17.1973 14.6216 17.1973 13.2666V13.0542C17.1973 11.6992 17.7515 10.4663 18.6426 9.5752C19.5361 8.68897 20.7666 8.13477 22.124 8.13477ZM28.0103 8.16162C28.5156 8.23731 28.9673 8.47656 29.3115 8.82324C29.7363 9.24805 29.9976 9.83398 29.9976 10.4785V15.752C29.9976 16.4258 29.7241 17.0361 29.2822 17.478C28.9429 17.8174 28.501 18.0591 28.0103 18.1519V20.5029C28.0103 21.6675 27.5342 22.7271 26.7676 23.4937C26.001 24.2603 24.9414 24.7363 23.7769 24.7363H4.2334C3.06885 24.7363 2.00928 24.2603 1.24268 23.4937C0.476074 22.7295 0 21.6699 0 20.5054V4.2334C0 3.06885 0.476074 2.00928 1.24268 1.24268C2.00928 0.476074 3.06885 0 4.2334 0H23.7744C24.939 0 25.9985 0.476074 26.7651 1.24268C27.5317 2.00928 28.0078 3.06885 28.0078 4.2334V8.16162H28.0103ZM21.5186 11.2573C22.5073 11.2573 23.3081 12.0581 23.3081 13.0469C23.3081 14.0356 22.5073 14.8364 21.5186 14.8364C20.5298 14.8364 19.729 14.0356 19.729 13.0469C19.729 12.0581 20.5298 11.2573 21.5186 11.2573Z" fill="#5C42E6"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="header__nav">
+                <ul class="header__nav--list">
+                    <li class="header__nav--item">
+                        <a href="#" class="header__nav--link _btn-to-scroll">
+                            Pools
+                            <svg width="9" height="9" viewBox="0 0 9 9">
+                                <path d="M8.91795 6.01402H5.87595V8.98402H3.10395V6.01402H0.0439453V3.38602H3.10395V0.416016H5.87595V3.38602H8.91795V6.01402Z" fill="#4469E8"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav--item">
+                        <form action="#" class="header__nav--custome-select header__custome-select _accent-select">
+                            <button type="button" class="header__custome-select--open-btn _accent-select-open-btn">
+                                <img src="img/icons/wallet3.svg" alt="" class="header__custome-select--icon">
+                                <span>
+                                    Connect wallet
+                                </span>
+                                <svg width="13" height="13" viewBox="0 0 13 13" class="header__custome-select--arrow _accent-select-arrow">
+                                    <path d="M12.8701 3.99619L8.69972 8.16527L6.50012 10.3662L4.29922 8.16527L0.130119 3.99619L1.64202 2.67019L6.50012 7.64268L11.509 2.63379L12.8701 3.99619Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <ul class="header__custome-select--list _accent-select-list">
+                                <li class="header__custome-select--item">
+                                    <button type="button" class="header__custome-select--btn _accent-select-option" style="--bg: #884407;" data-option="metamask">
+                                        <img src="img/icons/metamask.svg" alt="" class="header__custome-select--btn-icon">
+                                        <img src="img/icons/metamask-text.svg" width="131" alt="" class="header__custome-select--btn-text">
+                                    </button>
+                                </li>
+                                <li class="header__custome-select--item">
+                                    <button type="button" class="header__custome-select--btn _accent-select-option" style="--bg: #3375BB;" data-option="trust-wallet">
+                                        <img src="img/icons/trust-wallet.svg" alt="" class="header__custome-select--btn-icon">
+                                        <img src="img/icons/trust-wallet-text.svg" width="131" alt="" class="header__custome-select--btn-text">
+                                    </button>
+                                </li>
+                            </ul>
+                            <select name="connect-wallet" class="header__custome-select--elem _accent-select-elem">
+                                <option value="metamask">
+                                    Metamask
+                                </option>
+                                <option value="trust-wallet">
+                                    Trust Wallet
+                                </option>
+                            </select>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="header__nav--mob-list">
+                    <li class="header__nav--item">
+                        <a href="#" class="header__nav--link _min-btn">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <section class="intro">
+            <div class="intro__body">
+                <div class="intro__info _txt-center">
+                    <div class="intro__info--container _container _min"> 
+                        <div class="intro__image">
+                            <picture>
+                                <source srcset="img/intro/logo.webp" type="image/webp">
+                                <img src="img/intro/logo.png" alt="" width="300" loading="lazy" class="intro__image--img">
+                            </picture>
+                        </div>
+                        <h1 class="intro__title _main-title">
+                            <span class="accent-span _1">
+                                safest launchpad
+                            </span>
+                            <span class="accent-span _2">
+                                multi-chain
+                            </span>
+                        </h1>
+                        <h2 class="intro__subtitle _subtitle">
+                            Launching hand-picked high-quality projects on the <mark>Blockchain.</mark>
+                        </h2>
+                        <div class="intro__text _text">
+                            <p>
+                                Stake tokens to <mark>get early-access</mark> to promising projects.
+                            </p>
+                        </div> 
+                    </div>
+                </div>
+                <div class="intro__block">
+                    <div class="intro__block--container _container _min">
+                        <ul class="intro__social-list">
+                            <li class="intro__social-list--item">
+                                <a href="#" class="intro__social-list--link" style="--bg: linear-gradient(87.75deg, #8000FF 2.82%, #CC00FF 100%); --shadow: 0px 0px 20px rgba(175, 4, 255, 0.4); --icon-shadow: drop-shadow(0px 0px 10px rgba(235, 0, 255, 0.7));">
+                                    <svg width="25" height="20" viewBox="0 0 25 20">
+                                        <g clip-path="url(#clip0_19_1951)">
+                                            <path d="M12.1948 7.38729C12.0178 7.40153 11.8449 7.42188 11.676 7.44425C9.91008 7.69653 8.58561 8.45133 7.68636 9.47876C6.79309 10.5429 6.27414 11.871 6.20931 13.2589C6.18464 13.6712 6.19349 14.0849 6.23576 14.4958C6.84228 14.6418 7.38036 14.9914 7.76005 15.4864C8.13975 15.9814 8.33806 16.5917 8.32185 17.2153C8.30564 17.8389 8.07589 18.4381 7.67099 18.9126C7.2661 19.3872 6.71059 19.7084 6.0973 19.8226C5.48401 19.9369 4.85011 19.8371 4.30152 19.5401C3.75294 19.2431 3.32291 18.7668 3.08331 18.1908C2.84371 17.6148 2.80906 16.974 2.98513 16.3756C3.16121 15.7771 3.53735 15.2572 4.0507 14.9028L4.13208 14.8478C4.06574 14.2786 4.05008 13.7047 4.08529 13.1327C4.1772 11.2768 4.87791 9.50287 6.0791 8.08512C7.2998 6.67725 9.06372 5.65592 11.3688 5.32633C11.617 5.28971 11.8734 5.26327 12.1379 5.24292L10.8276 4.15039L12.1948 2.52279L16.4368 6.06079L12.6322 9.99552L11.1003 8.52051L12.1948 7.38729ZM21.0347 1.44857C21.5549 1.44796 22.0701 1.55029 22.5506 1.74967C23.031 1.94905 23.4673 2.24154 23.8342 2.61027C24.2025 2.97798 24.4946 3.41468 24.6939 3.89539C24.8932 4.3761 24.9958 4.89139 24.9958 5.41178C24.9958 5.93218 24.8932 6.44746 24.6939 6.92817C24.4946 7.40888 24.2025 7.84558 23.8342 8.2133C23.4667 8.58147 23.0302 8.87355 22.5496 9.07284C22.0691 9.27213 21.554 9.37471 21.0337 9.37471C20.5135 9.37471 19.9984 9.27213 19.5178 9.07284C19.0373 8.87355 18.6008 8.58147 18.2332 8.2133C17.4905 7.47012 17.0733 6.46245 17.0733 5.41178C17.0733 4.36112 17.4905 3.35344 18.2332 2.61027C18.6007 2.24166 19.0373 1.94927 19.5181 1.74991C19.9989 1.55055 20.5143 1.44814 21.0347 1.44857ZM22.6624 3.78418C22.285 3.40401 21.7875 3.16656 21.2546 3.11236C20.7217 3.05816 20.1865 3.19056 19.7404 3.48698C19.2942 3.7834 18.9648 4.22546 18.8083 4.73771C18.6517 5.24996 18.6778 5.80066 18.8821 6.29582C19.0863 6.79098 19.4561 7.19992 19.9282 7.45284C20.4004 7.70575 20.9457 7.78697 21.4711 7.68264C21.9965 7.57831 22.4694 7.29489 22.809 6.88075C23.1487 6.46661 23.3342 5.94742 23.3337 5.41178C23.3343 4.80174 23.0929 4.21638 22.6624 3.78418ZM12.1053 16.9983L13.8875 15.981L12.8703 14.1968L14.5406 13.2487L15.5579 15.0309L17.3421 14.0137L18.2902 15.684L16.508 16.7013L17.5252 18.4835L15.8488 19.4356L14.8315 17.6534L13.0493 18.6707L12.1053 16.9983ZM0 3.74552L1.78223 2.72827L0.764974 0.94401L2.44141 0L3.45866 1.78223L5.24089 0.764974L6.18286 2.44141L4.40063 3.45866L5.41789 5.24089L3.74349 6.18286L2.72624 4.40063L0.941976 5.41789L0 3.74552ZM6.41073 16.5934C6.28123 16.4041 6.09005 16.2656 5.8698 16.2015C5.64956 16.1373 5.41389 16.1516 5.20302 16.2419C4.99214 16.3322 4.81912 16.4928 4.71346 16.6964C4.60781 16.9 4.57608 17.134 4.62368 17.3584C4.67127 17.5828 4.79526 17.7837 4.97447 17.9269C5.15368 18.07 5.37702 18.1466 5.60638 18.1435C5.83575 18.1404 6.05692 18.0578 6.23217 17.9098C6.40743 17.7618 6.5259 17.5576 6.56738 17.3319C6.59114 17.2046 6.58952 17.0738 6.56264 16.9471C6.53576 16.8203 6.48414 16.7002 6.41073 16.5934Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_19_1951">
+                                                <rect width="25" height="19.8792" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <span>
+                                        Apply As A Project
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="intro__social-list--item">
+                                <a href="#" class="intro__social-list--link" style="--bg: linear-gradient(87.76deg, #4469E8 2.35%, #44ADE8 100%); --shadow: 0px 0px 20px rgba(68, 105, 232, 0.4); --icon-shadow: drop-shadow(0px 0px 10px rgba(47, 169, 238, 0.7));">
+                                    <svg width="25" height="22" viewBox="0 0 25 22">
+                                        <path d="M22.9705 0.239158L0.821646 8.82444C-0.0696536 9.22422 -0.371122 10.0249 0.60618 10.4594L6.28836 12.2745L20.027 3.73983C20.7771 3.20402 21.5451 3.34691 20.8843 3.93629L9.08463 14.6753L8.71396 19.22C9.05729 19.9218 9.68591 19.925 10.0869 19.5763L13.3514 16.4713L18.9425 20.6796C20.2411 21.4524 20.9476 20.9537 21.227 19.5374L24.8943 2.08281C25.275 0.339354 24.6257 -0.428808 22.9705 0.239158Z" fill="white"/>
+                                    </svg>
+                                    <span>Telegram</span>
+                                </a>
+                            </li>
+                            <li class="intro__social-list--item">
+                                <a href="#" class="intro__social-list--link" style="--bg: linear-gradient(87.84deg, #4469E8 2.16%, #FF1F00 100%); --shadow: 0px 0px 20px rgba(255, 47, 0, 0.4); --icon-shadow: drop-shadow(0px 0px 10px rgba(235, 0, 255, 0.7));">
+                                    <svg width="25" height="21" viewBox="0 0 25 21">
+                                        <path d="M24.1953 0.389779C22.704 2.15302 18.9361 5.31515 11.2034 5.06145H3.49687C1.56568 5.06145 0 6.6276 0 8.55808V9.43254C0 11.3638 1.56568 12.929 3.49687 12.929H5.40937L9.47273 19.6153C9.87363 20.2758 10.7602 20.5336 11.4532 20.1916L13.1393 19.3598C13.8324 19.0195 14.068 18.2074 13.6656 17.5478L10.8453 12.9285H11.2022C18.9353 12.6754 22.7038 15.837 24.1938 17.6008C24.6935 18.1912 25 18.1162 25 17.3435V0.647492C25 -0.125174 24.6935 -0.200246 24.1953 0.389779ZM6.93477 10.4958H3.26292C2.97366 10.4958 2.73848 10.2609 2.73848 9.97096C2.73848 9.68158 2.97366 9.44639 3.26292 9.44639H6.93477C7.22462 9.44639 7.45921 9.68152 7.45921 9.97096C7.45916 10.2609 7.22462 10.4958 6.93477 10.4958ZM6.93477 8.16467H3.26292C2.97366 8.16467 2.73848 7.93014 2.73848 7.64028C2.73848 7.3509 2.97366 7.11536 3.26292 7.11536H6.93477C7.22462 7.11536 7.45921 7.3509 7.45921 7.64028C7.45916 7.93014 7.22462 8.16467 6.93477 8.16467Z" fill="white"/>
+                                    </svg>
+                                    <span>Announcements</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="intro__min-list">
+                            <li class="intro__min-list--item">
+                                <a href="#" class="intro__min-list--link" style="--coloring: #00D4FE;">
+                                    <svg width="18" height="16" viewBox="0 0 18 16">
+                                        <g clip-path="url(#clip0_19_1995)">
+                                            <path d="M8.7222 1.83333H11.4112C11.4817 1.83333 11.5493 1.86077 11.5991 1.90961C11.649 1.95844 11.677 2.02468 11.677 2.09375V12.4427C11.677 12.5118 11.649 12.578 11.5991 12.6268C11.5493 12.6757 11.4817 12.7031 11.4112 12.7031H8.7222C8.65169 12.7031 8.58407 12.6757 8.53422 12.6268C8.48437 12.578 8.45636 12.5118 8.45636 12.4427V2.08333C8.45636 2.01427 8.48437 1.94803 8.53422 1.89919C8.58407 1.85035 8.65169 1.82292 8.7222 1.82292V1.83333ZM18 16H1.31989C1.14693 16.0007 0.97552 15.9679 0.815501 15.9036C0.655482 15.8393 0.509995 15.7446 0.387379 15.6251C0.264763 15.5056 0.167429 15.3636 0.100955 15.2071C0.0344804 15.0507 0.000173478 14.883 0 14.7135H0V0H1.68675V14.3477H18V16ZM13.6974 7.00521H16.3864C16.4569 7.00521 16.5245 7.03264 16.5743 7.08148C16.6242 7.13032 16.6522 7.19656 16.6522 7.26562V12.4427C16.6522 12.5118 16.6242 12.578 16.5743 12.6268C16.5245 12.6757 16.4569 12.7031 16.3864 12.7031H13.6974C13.6269 12.7031 13.5593 12.6757 13.5094 12.6268C13.4596 12.578 13.4315 12.5118 13.4315 12.4427V7.25911C13.4315 7.19005 13.4596 7.12381 13.5094 7.07497C13.5593 7.02613 13.6269 6.9987 13.6974 6.9987V7.00521ZM3.74701 3.83333H6.43598C6.50419 3.83498 6.56914 3.86226 6.61739 3.90953C6.66564 3.95679 6.69349 4.02042 6.69517 4.08724V12.4427C6.69519 12.5107 6.6681 12.5759 6.61967 12.6246C6.57125 12.6732 6.50532 12.7014 6.43598 12.7031H3.74701C3.6765 12.7031 3.60889 12.6757 3.55903 12.6268C3.50918 12.578 3.48117 12.5118 3.48117 12.4427V4.08724C3.4829 4.01931 3.51168 3.95473 3.56134 3.90729C3.61101 3.85985 3.67764 3.83331 3.74701 3.83333Z" fill="#00D4FE"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_19_1995">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <span>
+                                        Live chart
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="intro__min-list--item">
+                                <a href="#" class="intro__min-list--link" style="--coloring: #3D73EA;">
+                                    <svg width="20" height="20" viewBox="0 0 20 20">
+                                        <path d="M12.556 5.63999L10.136 3.36799L7.87599 5.63999L6.18799 4.19199L10.136 0.231995L14.044 4.11999L12.556 5.63999Z" fill="url(#paint0_linear_20_3092)"/>
+                                        <path d="M7.87599 5.63999L10.136 0.231995L6.18799 4.19199L7.87599 5.63999Z" fill="url(#paint1_linear_20_3092)"/>
+                                        <path d="M14.044 4.11999L10.136 0.231995L12.556 5.63999L14.044 4.11999Z" fill="url(#paint2_linear_20_3092)"/>
+                                        <path d="M7.74386 14.36L10.1678 16.628L12.4278 14.36L13.9758 15.948L10.1678 19.768L6.25586 15.88L7.74386 14.36Z" fill="url(#paint3_linear_20_3092)"/>
+                                        <path d="M10.1678 19.768L6.25586 15.88L7.74386 14.36L10.1678 19.768Z" fill="url(#paint4_linear_20_3092)"/>
+                                        <path d="M13.976 15.948L10.168 19.768L12.428 14.36L13.976 15.948Z" fill="url(#paint5_linear_20_3092)"/>
+                                        <path d="M16.8279 10.072L13.4519 13.444L15.0199 15.016L19.9639 10.072L15.0199 5.12799L13.4519 6.69599L16.8279 10.072Z" fill="url(#paint6_linear_20_3092)"/>
+                                        <path d="M13.4519 13.444L19.9639 10.072L15.0199 15.016L13.4519 13.444Z" fill="url(#paint7_linear_20_3092)"/>
+                                        <path d="M19.9639 10.072L13.4519 6.69599L15.0199 5.12799L19.9639 10.072Z" fill="url(#paint8_linear_20_3092)"/>
+                                        <path d="M3.17189 10.072L6.54789 6.69599L4.97989 5.12799L0.0358887 10.072L4.97989 15.016L6.54789 13.444L3.17189 10.072Z" fill="url(#paint9_linear_20_3092)"/>
+                                        <path d="M6.54789 13.444L0.0358887 10.072L4.97989 15.016L6.54789 13.444Z" fill="url(#paint10_linear_20_3092)"/>
+                                        <path d="M6.54789 6.69599L0.0358887 10.072L4.97989 5.12799L6.54789 6.69599Z" fill="url(#paint11_linear_20_3092)"/>
+                                        <path d="M9.71598 11.648L8.17198 10.1L9.71598 8.55598V5.36798L5.03198 10.1L9.71598 14.784V11.648Z" fill="url(#paint12_linear_20_3092)"/>
+                                        <path d="M5.03589 10.08L9.71989 8.53597V5.33997L5.03589 10.08Z" fill="url(#paint13_linear_20_3092)"/>
+                                        <path d="M9.71989 11.628L5.03589 10.08L9.71989 14.764V11.628Z" fill="url(#paint14_linear_20_3092)"/>
+                                        <path d="M10.5159 11.644L12.0599 10.1L10.5159 8.55195V5.36395L15.1999 10.1L10.5159 14.78V11.644Z" fill="url(#paint15_linear_20_3092)"/>
+                                        <path d="M15.1999 10.1L10.5159 8.55195V5.36395L15.1999 10.1Z" fill="url(#paint16_linear_20_3092)"/>
+                                        <path d="M10.5278 14.732V11.632L15.2278 10.08L10.5278 14.732Z" fill="url(#paint17_linear_20_3092)"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_20_3092" x1="-2.76831" y1="2.936" x2="36.4682" y2="2.936" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#AF04FF"/>
+                                        <stop offset="0.411445" stop-color="#EB00FF"/>
+                                        <stop offset="0.9735" stop-color="#EB00FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_20_3092" x1="6.18914" y1="2.936" x2="10.1355" y2="2.936" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#8000FF"/>
+                                        <stop offset="1" stop-color="#AF04FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint2_linear_20_3092" x1="10.1355" y1="2.936" x2="14.0439" y2="2.936" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#AF04FF"/>
+                                        <stop offset="1" stop-color="#8000FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint3_linear_20_3092" x1="10.1164" y1="25.9333" x2="10.1164" y2="-1.07538" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#AF04FF"/>
+                                        <stop offset="0.494792" stop-color="#DC04FF"/>
+                                        <stop offset="1" stop-color="#FF04C8"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint4_linear_20_3092" x1="6.25771" y1="17.064" x2="10.1661" y2="17.064" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#AF04FF"/>
+                                        <stop offset="1" stop-color="#892CFF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint5_linear_20_3092" x1="10.1662" y1="17.064" x2="13.9752" y2="17.064" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#892CFF"/>
+                                        <stop offset="1" stop-color="#AF04FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint6_linear_20_3092" x1="13.452" y1="10.0713" x2="19.9634" y2="10.0713" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#00D4FE"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint7_linear_20_3092" x1="13.452" y1="12.5429" x2="19.9634" y2="12.5429" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#574CE3"/>
+                                        <stop offset="0.9898" stop-color="#00D4FE" stop-opacity="0"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint8_linear_20_3092" x1="13.452" y1="7.59964" x2="19.9634" y2="7.59964" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#574CE3"/>
+                                        <stop offset="0.9898" stop-color="#00D4FE" stop-opacity="0"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint9_linear_20_3092" x1="6.54781" y1="10.0714" x2="0.0363924" y2="10.0714" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#00D4FE"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint10_linear_20_3092" x1="0.0363927" y1="12.5431" x2="6.54781" y2="12.5431" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#00D4FE" stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint11_linear_20_3092" x1="0.0363927" y1="7.59984" x2="6.54781" y2="7.59984" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0.0102041" stop-color="#00D4FE" stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint12_linear_20_3092" x1="7.36243" y1="12.4296" x2="12.0715" y2="7.72053" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#AF04FF"/>
+                                        <stop offset="0.479167" stop-color="#FA03FF"/>
+                                        <stop offset="0.9735" stop-color="#CC01FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint13_linear_20_3092" x1="5.0372" y1="7.71006" x2="9.72033" y2="7.71006" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#8000FF"/>
+                                        <stop offset="1" stop-color="#AF04FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint14_linear_20_3092" x1="5.0372" y1="12.4221" x2="9.72033" y2="12.4221" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#8000FF"/>
+                                        <stop offset="1" stop-color="#AF04FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint15_linear_20_3092" x1="15.199" y1="10.072" x2="10.5161" y2="10.072" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#00D4FE"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint16_linear_20_3092" x1="10.5161" y1="7.73047" x2="15.199" y2="7.73047" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0.0102041" stop-color="#00D4FE" stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint17_linear_20_3092" x1="10.5261" y1="12.4055" x2="15.2293" y2="12.4055" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0.0102041" stop-color="#00D4FE" stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#574CE3"/>
+                                        </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <span>
+                                        BUY CoiX
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="intro__min-list--item _large">
+                                <form action="#" class="intro__min-list--form">
+                                    <span class="intro__min-list--label">
+                                        <input type="text" value="0x82514caBF407c56970c12f0B8aDD208c7dA90FDd" readonly name="wallet" class="intro__min-list--input _min-input _copy-input">
+                                        <button class="intro__min-list--copy-btn _copy-input-btn" type="button">
+                                            <svg width="16" height="17" viewBox="0 0 16 17">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3859 1.93132V3.00073H14.0707H14.072V3.0035C14.6041 3.00488 15.0865 3.2207 15.4347 3.57072C15.7803 3.91797 15.9959 4.39803 15.9972 4.92928H16V4.93205V15.0687V15.0701H15.9972C15.9959 15.6013 15.7803 16.0841 15.4306 16.4342C15.0837 16.78 14.6041 16.9958 14.0734 16.9972V17H14.0707H5.54341H5.54202V16.9972C5.01132 16.9958 4.5276 16.78 4.17932 16.43C3.83381 16.0828 3.61821 15.6027 3.61683 15.0715H3.61406V15.0687V12.7984H1.92934H1.92796V12.7957C1.39725 12.7943 0.913536 12.5785 0.565259 12.2284C0.219746 11.8812 0.00414615 11.4011 0.0027641 10.8699H0V10.8671V1.93132V1.92993H0.0027641C0.00414615 1.3973 0.221128 0.914469 0.569405 0.565837C0.9163 0.219971 1.39587 0.00415039 1.92658 0.00276693V0H1.92934H10.4566H10.458V0.00276693C10.9901 0.00415039 11.4724 0.219971 11.8207 0.569987C12.1662 0.917236 12.3818 1.3973 12.3832 1.92855H12.3859V1.93132ZM10.9237 3.00073V1.93132V1.92855H10.9265C10.9265 1.80265 10.8726 1.68644 10.7869 1.60067C10.7026 1.51628 10.5851 1.46232 10.4594 1.46232V1.46509H10.458H1.93072H1.92796V1.46232C1.80219 1.46232 1.6861 1.51628 1.60041 1.60205C1.51611 1.68644 1.46221 1.80404 1.46221 1.92993H1.46497V1.93132V10.8671V10.8699H1.46221C1.46221 10.9958 1.51611 11.112 1.6018 11.1978C1.6861 11.2821 1.80358 11.3361 1.92934 11.3361V11.3333H1.93072H3.61544V4.93205V4.93066H3.61821C3.61959 4.39803 3.83657 3.9152 4.18485 3.56657C4.53174 3.2207 5.01132 3.00488 5.54202 3.0035V3.00073H5.54479H10.9237ZM14.5364 15.0687V4.93205V4.92928H14.5392C14.5392 4.80339 14.4853 4.68717 14.3996 4.6014C14.3153 4.51701 14.1978 4.46305 14.072 4.46305V4.46582H14.0707H5.54341H5.54064V4.46305C5.41487 4.46305 5.29878 4.51701 5.2131 4.60278C5.12879 4.68717 5.07489 4.80477 5.07489 4.93066H5.07765V4.93205V15.0687V15.0715H5.07489C5.07489 15.1973 5.12879 15.3136 5.21448 15.3993C5.29878 15.4837 5.41626 15.5377 5.54202 15.5377V15.5349H5.54341H14.0707H14.0734V15.5377C14.1992 15.5377 14.3153 15.4837 14.401 15.398C14.4853 15.3136 14.5392 15.196 14.5392 15.0701H14.5364V15.0687Z" fill="white"/>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="intro__footer">
+                    <div class="intro__footer-info">
+                        <div class="intro__footer-info--container _container _min">
+                            <ul class="intro__footer-info--list">
+                                <li class="intro__footer-info--item">
+                                    <div class="intro__footer-info--item-body">
+                                        <div class="intro__footer-info--param">
+                                            <svg width="12" height="18" viewBox="0 0 12 18">
+                                                <path d="M11.2679 11.184C11.2679 12.18 10.9079 13.044 10.1879 13.776C9.47993 14.496 8.44793 14.958 7.09193 15.162V17.16H4.93193V15.234C4.03193 15.174 3.17993 15.024 2.37593 14.784C1.57193 14.532 0.90593 14.226 0.37793 13.866L1.54793 11.238C2.11193 11.61 2.76593 11.91 3.50993 12.138C4.25393 12.366 4.98593 12.48 5.70593 12.48C7.07393 12.48 7.75793 12.138 7.75793 11.454C7.75793 11.094 7.55993 10.83 7.16393 10.662C6.77993 10.482 6.15593 10.296 5.29193 10.104C4.34393 9.89999 3.55193 9.68399 2.91593 9.45599C2.27993 9.21599 1.73393 8.83799 1.27793 8.32199C0.82193 7.80599 0.59393 7.10999 0.59393 6.23399C0.59393 5.20199 0.96593 4.31999 1.70993 3.58799C2.45393 2.84399 3.52793 2.38799 4.93193 2.21999V0.23999H7.09193V2.18399C7.77593 2.24399 8.42993 2.36399 9.05393 2.54399C9.68993 2.72399 10.2539 2.95799 10.7459 3.24599L9.64793 5.89199C8.44793 5.24399 7.28393 4.91999 6.15593 4.91999C5.44793 4.91999 4.93193 5.02799 4.60793 5.24399C4.28393 5.44799 4.12193 5.71799 4.12193 6.05399C4.12193 6.38999 4.31393 6.64199 4.69793 6.80999C5.08193 6.97799 5.69993 7.15199 6.55193 7.33199C7.51193 7.53599 8.30393 7.75799 8.92793 7.99799C9.56393 8.22599 10.1099 8.59799 10.5659 9.11399C11.0339 9.61799 11.2679 10.308 11.2679 11.184Z" fill="white"/>
+                                            </svg>
+                                            0.65
+                                        </div>
+                                        <div class="intro__footer-info--descr">Price</div>
+                                    </div>
+                                </li>
+                                <li class="intro__footer-info--item">
+                                    <div class="intro__footer-info--item-body">
+                                        <div class="intro__footer-info--param">
+                                            <svg width="16" height="22" viewBox="0 0 16 22">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.04189 5.55013L16 9.03776L13.9581 16.4445L0 12.9622L2.04189 5.55013ZM15.2819 4.94499L10.2058 6.62435L11.0472 4.979C9.13234 3.51807 7.2046 3.17611 5.11853 4.13753C6.99655 0.997233 10.0824 0.537109 12.7337 1.68473L13.5936 0L15.2819 4.94499ZM0.736479 17.0568L5.80529 15.3721L4.96018 17.0228C6.87503 18.4837 8.80276 18.8239 10.8907 17.8643C9.00898 21.0028 5.92865 21.4665 3.27917 20.3153L2.41749 22L0.725432 17.0568H0.736479ZM8.61496 8.82113C9.05705 8.93828 9.45357 9.18011 9.7545 9.51612C10.0554 9.85213 10.2473 10.2673 10.3059 10.7092C10.3645 11.1511 10.2872 11.6 10.0837 11.9992C9.88026 12.3985 9.55979 12.7302 9.1627 12.9525C8.76562 13.1749 8.30971 13.2779 7.85249 13.2486C7.39526 13.2193 6.9572 13.059 6.59355 12.7879C6.2299 12.5168 5.95695 12.1471 5.80913 11.7254C5.66131 11.3036 5.64524 10.8487 5.76295 10.4181C5.84114 10.1316 5.97677 9.86298 6.16204 9.6276C6.34731 9.39221 6.57858 9.19474 6.84256 9.04651C7.10654 8.89828 7.39803 8.80223 7.7003 8.76386C8.00256 8.72549 8.30965 8.74556 8.60391 8.82292L8.61496 8.82113ZM4.19609 7.3208L13.229 9.52474C13.1497 9.81485 13.1921 10.1237 13.3467 10.3835C13.5013 10.6433 13.7557 10.8328 14.0539 10.9105L13.2566 13.8395C12.958 13.7624 12.6402 13.8035 12.3727 13.9538C12.1052 14.1042 11.91 14.3515 11.8297 14.6416L2.771 12.4395C2.81051 12.2958 2.8205 12.146 2.80042 11.9986C2.78034 11.8511 2.73057 11.709 2.65396 11.5803C2.57735 11.4516 2.47541 11.3389 2.35396 11.2485C2.2325 11.1582 2.09393 11.092 1.94614 11.0537L2.75075 8.12467C3.04981 8.2019 3.36815 8.16088 3.63621 8.01059C3.90427 7.8603 4.10026 7.61296 4.18136 7.32259L4.19609 7.3208Z" fill="white"/>
+                                            </svg>
+                                            $56.58M
+                                        </div>
+                                        <div class="intro__footer-info--descr">Market Cap (87.44M supply)</div>
+                                    </div>
+                                </li>
+                                <li class="intro__footer-info--item">
+                                    <div class="intro__footer-info--item-body">
+                                        <div class="intro__footer-info--param">
+                                            <svg width="12" height="18" viewBox="0 0 12 18">
+                                                <g clip-path="url(#clip0_19_1713)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.95607 0C7.44112 6.14355 -0.226686 6.16406 0.0058005 12.5156C0.163154 16.8105 3.0097 18.3794 5.88885 17.9238C5.80521 17.8608 5.72157 17.792 5.64077 17.7231C4.75618 16.9585 4.31531 15.9814 4.31531 14.6895C4.31531 12.1128 6.73799 12.6226 5.75418 9.81006L5.76552 9.81445L5.76268 9.81006C5.9895 9.95947 6.18938 10.1089 6.36516 10.2627C7.35465 11.1255 7.96847 12.6387 7.59706 14.0801C7.16185 15.7603 5.51602 15.7251 6.15536 17.877C9.04868 17.2954 11.8924 14.6924 12.0001 10.7739C11.735 8.15039 9.48672 7.42676 10.6931 4.64209C9.1465 4.74609 8.77367 5.60449 8.77792 7.49414C8.96788 9.92139 5.00426 9.55957 7.08105 6.5918C8.86723 4.0415 7.11082 1.41943 4.95607 0Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_19_1713">
+                                                <rect width="12" height="18" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                            $44.74M
+                                        </div>
+                                        <div class="intro__footer-info--descr">TVL</div>
+                                    </div>
+                                </li>
+                                <li class="intro__footer-info--item">
+                                    <div class="intro__footer-info--item-body">
+                                        <div class="intro__footer-info--param">
+                                            <svg width="16" height="16" viewBox="0 0 16 16">
+                                                <path d="M0 12.6656V14C0 15.1031 2.6875 16 6 16C9.3125 16 12 15.1031 12 14V12.6656C10.7094 13.575 8.35 14 6 14C3.65 14 1.29062 13.575 0 12.6656ZM10 4C13.3125 4 16 3.10313 16 2C16 0.896875 13.3125 0 10 0C6.6875 0 4 0.896875 4 2C4 3.10313 6.6875 4 10 4ZM0 9.3875V11C0 12.1031 2.6875 13 6 13C9.3125 13 12 12.1031 12 11V9.3875C10.7094 10.45 8.34688 11 6 11C3.65313 11 1.29062 10.45 0 9.3875ZM13 9.73125C14.7906 9.38437 16 8.74063 16 8V6.66563C15.275 7.17812 14.2094 7.52813 13 7.74375V9.73125ZM6 5C2.6875 5 0 6.11875 0 7.5C0 8.88125 2.6875 10 6 10C9.3125 10 12 8.88125 12 7.5C12 6.11875 9.3125 5 6 5ZM12.8531 6.75938C14.7281 6.42188 16 5.75938 16 5V3.66563C14.8906 4.45 12.9844 4.87188 10.9781 4.97188C11.9 5.41875 12.5781 6.01875 12.8531 6.75938Z" fill="white"/>
+                                            </svg>
+                                            $15.93M
+                                        </div>
+                                        <div class="intro__footer-info--descr">Raised in 112 projects</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="intro__footer-tab">
+                        <div class="intro__footer-tab--container _container _min">
+                            <ul class="intro__footer-tab--list">
+                                <li class="intro__footer-tab--item">
+                                    <a href="#" class="intro__footer-tab--link _current">
+                                        Pools
+                                        <svg width="9" height="9" viewBox="0 0 9 9">
+                                            <path d="M8.91795 6.01402H5.87595V8.98402H3.10395V6.01402H0.0439453V3.38602H3.10395V0.416016H5.87595V3.38602H8.91795V6.01402Z" fill="#4469E8"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="intro__footer-tab--item">
+                                    <a href="#" class="intro__footer-tab--link">
+                                        FAQ
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section class="presale">
+        <div class="presale__container _container">
+            <div class="presale__return page-return">
+    <a href="#" class="page-return__link">
+        <svg width="13" height="13" viewBox="0 0 13 13">
+            <path d="M9.00381 0.130005L4.83473 4.3004L2.63383 6.5L4.83473 8.7009L9.00381 12.87L10.3298 11.3581L5.35732 6.5L10.3662 1.4911L9.00381 0.130005Z" fill="#554268"/>
+        </svg>
+        <span>
+            BACK
+        </span>
+    </a>
+</div>
+            <div class="presale__header">
+                <div class="presale__header--body">
+                    <div class="presale__header--avatar presale__avatar">
+                        <picture>
+                            <source srcset="img/presale/avatar.webp" type="image/webp">
+                            <img src="img/presale/avatar.jpg" alt="" width="190" class="presale__avatar--img">
+                        </picture>
+                    </div>
+                    <h2 class="presale__header--title _title">
+                        FlokiLove Presale
+                    </h2>
+                    <div class="presale__header--status presale__status">
+                        <div class="presale__status--elem _status _4 _large">
+                            <svg width="11" height="15" viewBox="0 0 11 15">
+                                <path d="M9.81379 6.0132H9.20043V3.58308C9.20043 1.79255 7.74883 0.340942 5.95829 0.340942H5.37726C3.58673 0.340942 2.13512 1.79255 2.13512 3.58308V6.0132H1.52176C0.944916 6.0132 0.477295 6.48082 0.477295 7.05767V13.7737C0.477295 14.3506 0.944916 14.8182 1.52176 14.8182H9.81395C10.3908 14.8182 10.8584 14.3506 10.8584 13.7737V7.05767C10.8584 6.48082 10.3908 6.0132 9.81379 6.0132ZM6.23851 10.4319V11.9721C6.23851 12.2872 5.98306 12.5428 5.66778 12.5428C5.35249 12.5428 5.09704 12.2874 5.09704 11.9721V10.4319C4.75473 10.2075 4.55205 9.78795 4.64921 9.33079C4.7327 8.93861 5.05023 8.6222 5.44257 8.54016C6.1169 8.39924 6.71064 8.90997 6.71064 9.55953C6.71064 9.92468 6.52259 10.2456 6.23851 10.4319ZM3.42088 6.0132V4.02786C3.42088 2.70173 4.49591 1.6267 5.82204 1.6267C6.97782 1.6267 7.91468 2.56355 7.91468 3.71933V6.0132H3.42088Z" fill="#FFBA2A"/>
+                            </svg>
+                            <span>
+                                Upcoming
+                            </span>
+                        </div>
+                    </div>
+                    <div class="presale__header--descr _text">
+                        <p>
+                            Floki Love is a NEW Valentines Day Token! Floki Love will be giving away a five night two person cruise for Valentines Day. We will also be giving smaller cash prizes for Flowers, Jewelry, or whatever else you'd like to get your loved ones for Valentines day. With an experienced team behind it, and a strong community, we have no doubt about reaching the moon!
+                        </p>
+                    </div>
+                    <ul class="presale__header--social-list">
+                        <li class="presale__header--social-item">
+                            <a href="#" class="presale__header--social-link" title="Site" style="--shadow: drop-shadow(0px 0px 10px rgba(175, 4, 255, 0.7));">
+                                <svg width="30" height="30" viewBox="0 0 30 30">
+                                    <path d="M0.259033 15.6705C0.646331 22.076 5.13341 27.3905 11.1254 29.0208C9.20824 26.2624 7.94624 21.4432 7.8271 15.6705H0.259033Z" fill="white"/>
+                                    <path d="M0.259033 13.8692H7.82743C7.94624 8.0965 9.20824 3.27694 11.1257 0.518913C5.13341 2.14918 0.646331 7.46369 0.259033 13.8692Z" fill="white"/>
+                                    <path d="M18.8705 0.518257C19.9917 2.14228 20.9012 4.5025 21.4943 7.47354C21.5917 7.96127 21.2753 8.43555 20.7876 8.53303C20.3005 8.63084 19.8259 8.31411 19.7284 7.82605C18.9102 3.72791 17.4 0.788053 15.8075 0.0229753C15.5397 0.00853369 15.2702 0 14.9988 0C14.7277 0 14.4586 0.00853369 14.1914 0.0229753C11.9792 1.09986 9.79522 6.44983 9.63013 13.8692H15.1796C15.6769 13.8692 16.0803 14.2723 16.0803 14.7698C16.0803 15.2674 15.6769 15.6705 15.1796 15.6705H9.63013C9.79522 23.0899 11.9792 28.4398 14.1914 29.5167C14.4586 29.5311 14.7277 29.5397 14.9988 29.5397C15.2673 29.5397 15.5338 29.5305 15.7987 29.5164C17.1634 28.8534 18.5019 26.5657 19.3612 23.3071C19.4878 22.826 19.9818 22.5385 20.4613 22.6658C20.9425 22.7925 21.2297 23.2848 21.1027 23.766C20.5247 25.9591 19.7599 27.7236 18.8652 29.0198C21.9334 28.1855 24.609 26.3888 26.5409 23.9698L22.6962 20.1251L21.7083 21.113C21.424 21.3976 21.0177 21.5249 20.6209 21.4514C20.2244 21.3785 19.8896 21.1153 19.7248 20.7477C19.7124 20.7204 19.7018 20.6929 19.6923 20.6646L16.5473 11.2477C16.3678 10.7928 16.4725 10.2828 16.8214 9.93387C17.1703 9.58497 17.6807 9.48027 18.1353 9.6598L27.5519 12.8048C27.5801 12.814 27.6077 12.8251 27.6349 12.8373C28.0025 13.0021 28.2654 13.3368 28.3386 13.733C28.4115 14.1292 28.2851 14.5355 28.0005 14.8207L27.0123 15.809L29.3699 18.1669C29.6278 17.0756 29.7686 15.9393 29.7686 14.7702C29.7686 7.96554 25.1421 2.22434 18.8705 0.518257Z" fill="white"/>
+                                    <path d="M26.0662 14.2076L18.6025 11.7148L21.095 19.1785L22.0593 18.2145C22.2353 18.0386 22.4657 17.9506 22.6961 17.9506C22.9265 17.9506 23.1569 18.0386 23.3328 18.2145L27.0854 21.9667C27.5737 22.4551 28.3657 22.4551 28.8541 21.9667C29.3425 21.4783 29.3425 20.6863 28.8541 20.1979L25.1019 16.4454C24.7504 16.0939 24.7504 15.5234 25.1019 15.1719L26.0662 14.2076Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="presale__header--social-item">
+                            <a href="#" class="presale__header--social-link" title="Twitter" style="--shadow: drop-shadow(0px 0px 10px rgba(29, 161, 242, 0.7));">
+                                <svg width="31" height="25" viewBox="0 0 31 25">
+                                    <path d="M10.0581 24.0025C21.2051 24.0025 27.3021 14.7671 27.3021 6.75856C27.3021 6.49631 27.3021 6.23505 27.2844 5.9751C28.4705 5.11714 29.4943 4.05502 30.3079 2.83799C29.2018 3.32802 28.0284 3.64967 26.8268 3.79146C28.0921 3.03393 29.039 1.84283 29.4913 0.439364C28.3015 1.14536 27.0001 1.64294 25.6429 1.91044C23.3477 -0.530195 19.5085 -0.648025 17.0679 1.64721C15.4938 3.12747 14.8262 5.3331 15.3145 7.43797C10.4421 7.19345 5.90189 4.89198 2.82452 1.10565C1.21592 3.87483 2.03745 7.41762 4.70094 9.19591C3.73631 9.16735 2.79301 8.90708 1.95014 8.4374C1.95014 8.46234 1.95014 8.48827 1.95014 8.5142C1.9508 11.3992 3.98444 13.8839 6.81237 14.4553C5.92027 14.6985 4.98387 14.7343 4.07569 14.5593C4.86965 17.0282 7.14486 18.7195 9.73779 18.7681C7.59156 20.4548 4.94054 21.3702 2.21108 21.3676C1.72892 21.3666 1.24743 21.3374 0.768555 21.2799C3.54003 23.0586 6.76511 24.0019 10.0581 23.9976" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="presale__header--social-item">
+                            <a href="#" class="presale__header--social-link" title="Telegram" style="--shadow: drop-shadow(0px 0px 10px rgba(47, 169, 238, 0.7));">
+                                <svg width="26" height="22" viewBox="0 0 26 22">
+                                    <path d="M23.2783 0.239158L1.12951 8.82444C0.238208 9.22422 -0.063261 10.0249 0.914041 10.4594L6.59622 12.2745L20.3349 3.73983C21.085 3.20402 21.853 3.34691 21.1922 3.93629L9.39249 14.6753L9.02182 19.22C9.36515 19.9218 9.99377 19.925 10.3947 19.5763L13.6593 16.4713L19.2504 20.6796C20.5489 21.4524 21.2555 20.9537 21.5349 19.5374L25.2022 2.08281C25.5829 0.339355 24.9336 -0.428808 23.2783 0.239158Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="presale__body">
+                <div class="presale__article">
+                    <div class="presale__info">
+                        <ul class="presale__info-list">
+                            <li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Presale Address
+    </span>
+    <span class="presale__info-item--value _accent">
+        0xB80DA3A51367918d29D83AB1D430548FA8A4e174
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Token Name
+    </span>
+    <span class="presale__info-item--value ">
+        FlokiLove
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Token Symbol
+    </span>
+    <span class="presale__info-item--value ">
+        LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Token Decimals
+    </span>
+    <span class="presale__info-item--value ">
+        18
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Token Address
+    </span>
+    <span class="presale__info-item--value _accent">
+        0xBB9350C5fea9ccC6df42908A30B3c72142571786
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Total Supply
+    </span>
+    <span class="presale__info-item--value ">
+        1,000,000,000,000 LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Tokens For Presale
+    </span>
+    <span class="presale__info-item--value ">
+        160,000,000,000 LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Tokens For Liquidity
+    </span>
+    <span class="presale__info-item--value ">
+        98,000,000,000 LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Presale Rate
+    </span>
+    <span class="presale__info-item--value ">
+        1 BNB = 1,600,000,000 LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Listing Rate
+    </span>
+    <span class="presale__info-item--value ">
+        1 BNB = 1,400,000,000 LOVE
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Initial Market Cap (estimate)
+    </span>
+    <span class="presale__info-item--value ">
+        $184,859
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Soft Cap
+    </span>
+    <span class="presale__info-item--value ">
+        50 BNB
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Hard Cap
+    </span>
+    <span class="presale__info-item--value ">
+        100 BNB
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Unsold Tokens
+    </span>
+    <span class="presale__info-item--value ">
+        Burn
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Presale Start Time
+    </span>
+    <span class="presale__info-item--value ">
+        2022.02.04 19:00 (UTC)
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Presale End Time
+    </span>
+    <span class="presale__info-item--value ">
+        2022.02.05 19:00 (UTC)
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Listing On
+    </span>
+    <span class="presale__info-item--value _accent">
+        Pancakeswap
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Liquidity Percent
+    </span>
+    <span class="presale__info-item--value ">
+        70%
+    </span>
+</li><li class="presale__info-item">
+    <span class="presale__info-item--name">
+        Liquidity Lockup Time
+    </span>
+    <span class="presale__info-item--value ">
+        30 days after pool ends
+    </span>
+</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="presale__aside">
+                    <div class="presale__buy">
+                        <div class="presale__buy--body">
+                            <h3 class="presale__buy--title _title _min _txt-center">
+                                Presale Starts In:
+                            </h3>
+                            <div class="presale__buy--timer presale__timer _timer-buy"
+                            data-timer-year="2022"
+                            data-timer-month="2"
+                            data-timer-day="15"
+                            data-timer-hour="15"
+                            data-timer-minute="15">
+                                <div class="presale__timer--item _timer-buy-day">
+                                    <div class="presale__timer--value _timer-buy-value">00</div>
+                                    <span class="presale__timer--name">Day</span>
+                                </div>
+                                <div class="presale__timer--item _timer-buy-hour">
+                                    <div class="presale__timer--value _timer-buy-value">00</div>
+                                    <span class="presale__timer--name">Hour</span>
+                                </div>
+                                <div class="presale__timer--item _timer-buy-min">
+                                    <div class="presale__timer--value _timer-buy-value">00</div>
+                                    <span class="presale__timer--name">Min</span>
+                                </div>
+                                <div class="presale__timer--item _timer-buy-sec _accent">
+                                    <div class="presale__timer--value _timer-buy-value">00</div>
+                                    <span class="presale__timer--name">Sec</span>
+                                </div>
+                            </div>
+                            <form action="#" class="presale__buy--form presale__form">
+                                <fieldset class="presale__form--fieldset _input-range-body">
+                                    <label>
+                                        <input type="range" name="presale-range" data-start="2" data-currency="bnb" step="1" min="0" max="100" class="presale__range _input-range">
+                                    </label>
+                                    <div class="presale__custome-range--wrapper">
+                                        <div class="presale__custome-range--body _input-range-elem"></div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="presale__form--fieldset presale__amount">
+                                    <h3 class="presale__amount--title _title _min _txt-center">
+                                        AMOUNT
+                                    </h3>
+                                    <div class="presale__amount--label">
+                                        <input type="text" name="presale-amount" placeholder="0.0001" class="presale__amount--input">
+                                        <button class="presale__amount--btn" type="button">MAX</button>
+                                    </div>
+                                </fieldset>
+                                <button class="presale__form--submit _btn" type="submit">
+                                    Buy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="presale__base-info">
+                        <ul class="presale__base-info--list">
+                            <li class="presale__base-info--item">
+                                <span class="presale__base-info--name">Status</span>
+                                <span class="presale__base-info--value _status-color _4">
+                                    Upcoming
+                                </span>
+                            </li>
+                            <li class="presale__base-info--item">
+                                <span class="presale__base-info--name">Sale type</span>
+                                <span class="presale__base-info--value _accent">
+                                    Whitelist only
+                                </span>
+                            </li>
+                            <li class="presale__base-info--item">
+                                <span class="presale__base-info--name">Minimum Buy</span>
+                                <span class="presale__base-info--value">
+                                    0.1 BNB
+                                </span>
+                            </li>
+                            <li class="presale__base-info--item">
+                                <span class="presale__base-info--name">Maximum Buy</span>
+                                <span class="presale__base-info--value">
+                                    2 BNB
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+    <footer class="footer">
+        <div class="footer__container _container _default">
+            <div class="footer__body">
+                <a href="index.html" class="footer__logo">
+                    <img src="img/icons/logo.svg" width="196" alt="" class="footer__logo--img">
+                </a>
+                <nav class="footer__nav">
+                    <div class="footer__nav--block">
+                        <h2 class="footer__nav--title _title">
+                            General
+                        </h2>
+                        <ul class="footer__nav--list">
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    Pools
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    Apply for IDO
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    CoinMarketCap
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    Terms of use
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav--block">
+                        <h2 class="footer__nav--title _title">
+                            Communities
+                        </h2>
+                        <ul class="footer__nav--list">
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/lang/Eng.webp" type="image/webp">
+                                        <img src="img/lang/Eng.png" alt="" width="17" class="footer__nav--icon">
+                                    </picture>
+                                    English
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/lang/Rus.webp" type="image/webp">
+                                        <img src="img/lang/Rus.png" alt="" width="17" class="footer__nav--icon">
+                                    </picture>
+                                    Russian
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/lang/China.webp" type="image/webp">
+                                        <img src="img/lang/China.png" alt="" width="17" class="footer__nav--icon">
+                                    </picture>
+                                     Chinese
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/lang/Turk.webp" type="image/webp">
+                                        <img src="img/lang/Turk.png" alt="" width="17" class="footer__nav--icon">
+                                    </picture>
+                                    Turkish
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav--block">
+                        <h2 class="footer__nav--title _title">
+                            Audits
+                        </h2>
+                        <ul class="footer__nav--list">
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/icons/audit-logo-1.webp" type="image/webp">
+                                        <img src="img/icons/audit-logo-1.png" alt="" width="220" class="footer__nav--logo">
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer__nav--item">
+                                <a href="#" class="footer__nav--link">
+                                    <picture>
+                                        <source srcset="img/icons/audit-logo-2.png" type="image/webp">
+                                        <img src="img/icons/audit-logo-2.png" alt="" width="220" class="footer__nav--logo">
+                                    </picture>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="footer__copy">
+                    2022 © Copyright CoiX. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
