@@ -113,6 +113,9 @@ async function onConnect() {
   console.log("Opening a dialog", web3Modal);
   try {
     provider = await web3Modal.connect();
+    document.querySelectorAll(".connected-message").forEach(element => {
+      element.textContent = element.dataset.connected;
+    })
   } catch(e) {
     console.log("Could not get a wallet connection", e);
     return;
@@ -160,11 +163,14 @@ async function onDisconnect() {
   // Set the UI back to the initial state
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#connected").style.display = "none";
+  document.querySelectorAll(".connected-message").forEach(element => {
+    element.textContent = element.dataset.disconnected;
+  })
 }
 
 async function onPay() {
   const amount=document.querySelector('#inp-value')
-  console.log('work');
+  
   try {
     const res = await web3.eth.sendTransaction({
       from:selectedAccount,
